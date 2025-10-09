@@ -135,11 +135,58 @@
 
 				<p>Miejsce na projekt laboratoryjny</p>
 				<script defer>
-					let name = prompt('Jak masz na imię?', '')
+					let name = prompt('Jak masz na imię?', '');
 				</script>
 				<script>
+
+					//Zadanie1
 					document.write('<p>Ćw. 1. Witaj, ' + name + '</p>');
-				</script>
+					let tablica = ['Robert Lewandowski', 'Kamil Stoch', 'Adam Malysz', 'Jakub Błaszczyk'];
+					
+					alert (tablica[0]);
+					tablica[tablica.length-1] = 'Janne Ahonen';
+					alert (tablica[tablica.length-1]);
+					tablica[3] = 'Jarosław Jarząbkowski';
+					tablica[tablica.length] = 'Albert Einstein';
+
+					tablica.push('Ronald Mcdonald', 'Stevie Wonder');
+					tablica.unshift('Wilfredo Leon')
+
+					//Zadanie2
+					
+					let tablicaDruga = ['Jan Kowalski', 'Robert Nowak'];
+					document.write('<p> Pierwszy element to <strong>');
+					document.write(tablicaDruga[0] + '</strong></p>');
+					document.write(tablicaDruga[tablicaDruga.length-1]);
+					document.unshift('Marcin Lewandowski');
+					
+					</script>
+					<script>
+					// Zadanie 3
+
+	
+					let projekt1 = document.getElementById("projekt1");
+
+					let liczbaSekcji = document.getElementsByTagName("section").length;
+					let liczbaNaglowkow = document.getElementsByTagName("h1").length;
+					let liczbaParagrafow = document.getElementsByTagName("p").length;
+					let liczbaFormularzy = document.forms.length;
+
+					let wynik = `
+						<p><strong>Ilość elementów na stronie:</strong></p>
+						<ul>
+							<li>Sekcje (section): ${liczbaSekcji}</li>
+							<li>Nagłówki (h1): ${liczbaNaglowkow}</li>
+							<li>Paragrafy (p): ${liczbaParagrafow}</li>
+							<li>Formularze (forms): ${liczbaFormularzy}</li>
+						</ul>
+					`;
+					projekt1.innerHTML += wynik;
+</script>
+    				
+</script>
+    				 
+				
 			</div>
 		</div>
 	</section>
@@ -149,12 +196,35 @@
 		<div class="container">
 			<div class="jumbotron">
 				<h1>Projekt 2</h1>
-				
-				<p>Miejsce na projekt laboratoryjny</p>
-				
+				<p><h1>Projekt 2 - Quiz o skokach narciarskich</h1>
+            <p>Sprawdź swoją wiedzę!</p>
+			<div id="quiz"></div>
 			</div>
 		</div>
 	</section>
+
+	<script>
+		//Zadanie 5
+    let questions = [
+        ['Kto jest rekordzistą świata w długości skoku (2025)?', 'Domen Prevc'],
+        ['Ile zawodników startuje w konkursie indywidualnym PŚ?', '50'],
+        ['Który zawodnik ma najwięcej zwycięstw w PŚ?', 'Matti Nykanen']
+    ];
+
+    let score = 0;
+
+    for (let i = 0; i < questions.length; i++) {
+        let answer = prompt(questions[i][0]); // wyświetlamy pytanie
+        if (answer == questions[i][1]) {      // proste porównanie
+            alert('Prawidłowa odpowiedź!');
+            score++;
+        } else {
+            alert('Błąd. Prawidłowa odpowiedź to ' + questions[i][1]);
+        }
+    }
+
+    alert('Twój wynik: ' + score + ' / ' + questions.length);
+	</script>
 
 	<footer>
 		<div class="container" style="margin-top: 5%">
